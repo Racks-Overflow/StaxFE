@@ -12,14 +12,14 @@ function TripItem(props) {
         </div>
         <div className={classes.content}>
           <h3>{props.title}</h3>
-          <address>{props.address}</address>
-          <p>{props.description}</p>
+          <address>{props.date}</address>
+          <p>{props.number}</p>
         </div>
         <div className={classes.actions}>
           <button>To Favorites</button>
         </div>
       </Card>
-    </li>
+    </li> 
 	);
 }
 export default TripItem;

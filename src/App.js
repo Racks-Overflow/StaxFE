@@ -7,37 +7,14 @@ import ReportBug from "./pages/ReportBug";
 import SignIn from "./pages/SignIn";
 import Trips from "./pages/Trip";
 import Layout from "./components/layout/Layout";
-import NewTripForm from "./components/NewStuff/NewTripForm";
+import Header from "./components/layout/Header";
+
 
 
 
 function App() {
-	return (
-		<div>
-		<Layout>
-			<Switch>
-				<Route path="/" exact>
-					<Home />
-				</Route>
-				<Route path="/report-bug">
-					<ReportBug />
-				</Route>
-				<Route path="/trips">
-					<Trips />
-          <NewTripForm />
-				</Route>
-				<Route path="/account">
-          Your Account
-					<Account />
-          
-				</Route>
-				<Route path="/sign-in">
-					<SignIn />
-				</Route>
-			</Switch>
-		</Layout>
-    </div>
-	);
+	return <Header />
+
 }
 
 export default App;

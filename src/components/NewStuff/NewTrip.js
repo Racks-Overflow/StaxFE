@@ -1,31 +1,31 @@
 /** @format */
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router";
 import NewTripForm from "./NewTripForm";
 
 function NewTripPage() {
-    
-
+    const history = useHistory();
 
 	function addTripHandler(tripData) {
 		fetch(
-			//postmanURL that you created when setting the code
-			{
-				method: "POST",
-				body: JSON.stringify(tripData),
-				headers: {
-					"Content-Type": "application/json",
-				}
-			}
-		);
-        
-	}
+            'https://stax-67bce-default-rtdb.firebaseio.com/newtrip.json',
+            {
+              method: 'POST',
+              body: JSON.stringify(tripData),
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          ).then(() => {
+            history.replace('/');
+          });
+        }
 
-	return (
-		<section>
-			<h1> Book A Trip</h1>
-			<NewTripForm />
-		</section>
-	);
-}
+        return (
+          <section>
+            <h1>Add New Trip</h1>
+            <NewTripForm onClick={}/>
+          </section>
+        );
+      }
 
 export default NewTripPage;

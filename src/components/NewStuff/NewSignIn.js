@@ -1,29 +1,27 @@
-import Card from "../ui/Card";
-import classes from "./NewSignIn.module.css";
+import React from "react";
+import { useRef } from "react";
+import NewSignInForm from "./NewSignInForm";
 
-function NewSignIn(){
+function NewSignIn(props){
+    
+    function newSignInHandler(userData) {
+        fetch(
+			'https://stax-67bce-default-rtdb.firebaseio.com/newsignin.json',
+			{
+				method: 'POST',
+				body: JSON.stringify(userData),
+				headers: {
+					"Content-Type": "application/json",
+				}
+			}
+		);
+	}
     return(
-    <Card>
-			<form className={classes.form}>
-				<div className={classes.control}>
-					<label htmlFor="username">UserName</label>
-					<input type="text" required id="title"></input>
-				</div>
-				<div className={classes.control}>
-					<label htmlFor="email">Email</label>
-					<input type="url" required id="image"></input>
-				</div>
-				<div className={classes.control}>
-					<label htmlFor="password">Password</label>
-					<input type="text" required id="address"></input>
-				</div>
-                <div className={classes.actions}>
-                    <button> Submit</button>
-                </div>
-
-			</form>
-		</Card>
-        );
+        <section>
+            <h1>Please Sign-In</h1>
+    <NewSignIn onNewSignIn={newSignInHandler} />
+       </section> 
+       );
     }
 
 export default NewSignIn;
