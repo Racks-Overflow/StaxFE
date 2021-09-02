@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../ui/Card";
 import classes from "./NewSignIn.module.css";
 import { useRef } from "react";
+import NewSignInForm from "./NewSignInForm";
 
 function SignInForm(props){
     const emailInputRef = useRef();
@@ -33,9 +34,9 @@ function SignInForm(props){
 				</div>
                 <div className={classes.actions}>
                     <button>Sign-In</button>
-                    {/* <button className='btn' onClick={NewSignInForm}>
+                    <button className='btn' onClick={NewSignInForm}>
                             Create Login
-                        </button> */}
+                        </button> 
                 </div>
 
 			</form>

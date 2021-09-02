@@ -5,24 +5,25 @@ import Card from "../ui/Card";
 import classes from "./NewTripForm.module.css";
 
 function NewTripForm(props) {
-	const titleInputRef = useRef();
+	const destinationInputeRef = useRef();
+	const tripEstimationInputRef = useRef();
 	const dateInputRef = useRef();
-	const priceInputRef = useRef();
 
 	function submitHandler(event) {
 		event.preventDefault();
 
-		const enteredTitle = titleInputRef.current.value;
+		const enteredDestination = destinationInputeRef.current.value;
+		const enteredTripEstimate = tripEstimationInputRef.current.value;
 		const enteredDate = dateInputRef.current.value;
-		const enteredPrice = priceInputRef.current.value;
 
-		const tripData = {
-			title: enteredTitle,
+		const tripdata = {
+			destination: enteredDestination,
+			tripEstimate: enteredTripEstimate,
 			date: enteredDate,
-			price: enteredPrice,
 		};
 		
-		props.onAddTrip(tripData);
+	props.onAddTrip(tripdata);
+
 	}
 		
 
@@ -30,16 +31,16 @@ function NewTripForm(props) {
 		<Card>
 			<form className={classes.form} onSubmit={submitHandler}>
 				<div className={classes.control}>
-					<label htmlFor="title">Trip Name</label>
-					<input type="text" required id="title" ref={titleInputRef} />
+					<label htmlFor="title">Trip Destinatoin</label>
+					<input type="text" required id="destination" ref={destinationInputeRef} />
 				</div>
 				<div className={classes.control}>
 					<label htmlFor="date">When</label>
 					<input type="date" required id="date" ref={dateInputRef} />
 				</div>
 				<div className={classes.control}>
-					<label htmlFor="price">Price</label>
-					<input type="number" required ref={priceInputRef} />
+					<label htmlFor="price">Group Price</label>
+					<input type="number" required ref={tripEstimationInputRef} />
 				</div>
 				<div className={classes.actions}>
 					<button> Add Trip</button>

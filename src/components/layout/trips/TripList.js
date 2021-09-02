@@ -10,10 +10,13 @@ function TripList(props) {
 				<TripItem
 					key={trip.id}
 					id={trip.id}
-					image={trip.image}
-					title={trip.title}
-					address={trip.address}
-					description={trip.description}
+					destination={trip.destination}
+					groupSize={trip.groupSize}
+					tripEstimate={trip.tripEstimate}
+					balance={trip.tripBalance}
+					totalSpent={trip.totalSpent}
+					estimatePerPerson={trip.estimatePerPerson}
+					isActive={trip.isActive}
 				/>
 			))}
 		</ul>

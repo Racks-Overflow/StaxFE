@@ -8,12 +8,14 @@ import SignIn from "./pages/SignIn";
 import Trips from "./pages/Trip";
 import Layout from "./components/layout/Layout";
 import Header from "./components/layout/Header";
+import FooterPage from "./components/layout/FooterPage";
 
 
 
 
 function App() {
-	return <Header />
+	return <Header /> 
+	
 
 }
 

@@ -1,5 +1,5 @@
 /** @format */
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import NewTripForm from "./NewTripForm";
 
 function NewTripPage() {
@@ -7,7 +7,7 @@ function NewTripPage() {
 
 	function addTripHandler(tripData) {
 		fetch(
-            'https://stax-67bce-default-rtdb.firebaseio.com/newtrip.json',
+            'https://stax-67bce-default-rtdb.firebaseio.com/addtrip.json',
             {
               method: 'POST',
               body: JSON.stringify(tripData),
@@ -23,7 +23,7 @@ function NewTripPage() {
         return (
           <section>
             <h1>Add New Trip</h1>
-            <NewTripForm onClick={}/>
+            <NewTripForm onAddTrip={addTripHandler} />
           </section>
         );
       }

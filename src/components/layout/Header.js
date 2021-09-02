@@ -4,6 +4,7 @@ import Home from "../../pages/Home";
 import ReportBug from "../../pages/ReportBug";
 import SignIn from "../../pages/SignIn";
 import Trips from "../../pages/Trip";
+import FooterPage from "./FooterPage";
 import Layout from "./Layout";
 
 
@@ -16,6 +17,7 @@ export default function Header() {
 			<Switch>
 				<Route path="/" exact>
 					<Home />
+                    <FooterPage></FooterPage>
 				</Route>
 				<Route path="/report-bug">
 					<ReportBug />
@@ -32,6 +34,8 @@ export default function Header() {
 			</Switch>
 		</Layout>
     </div>
+
+    
 	);
 }
 

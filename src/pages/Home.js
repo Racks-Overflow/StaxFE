@@ -2,8 +2,9 @@ import classes from './Page.module.css'
 
 
 function Home(){
+    return 
     
-    return <div>Welcome Home</div>;
+    <div>Welcome Home</div>;
 }
 
 export default Home;
